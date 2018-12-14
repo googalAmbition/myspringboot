@@ -1,0 +1,12 @@
+server:
+  port: 80
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  profiles:
+      active: druid
+mybatis:
+  mapper-locations: classpath:mybatis/*/*.xml
+   # 搜索指定包别名
+  type-aliases-package: com.ctc.myspringboot.dao
+  configLocation: classpath:mybatis/mybatis-config.xml
