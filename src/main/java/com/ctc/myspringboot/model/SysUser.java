@@ -1,5 +1,8 @@
 package com.ctc.myspringboot.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,6 +15,7 @@ public class SysUser implements Serializable {
     /**
      * id
      */
+    @TableId(type = IdType.UUID)
     private String id;
 
     private Date createDate;

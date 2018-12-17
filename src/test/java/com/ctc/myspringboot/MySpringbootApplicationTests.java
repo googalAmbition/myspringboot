@@ -59,5 +59,17 @@ public class MySpringbootApplicationTests {
         System.out.println(page.getTotal());
     }
 
+    @Test
+    public void userServiceSave(){
+        SysUser user = new SysUser();
+        user.setName("hello world");
+        sysUserService.save(user);
+    }
+
+    @Test
+    public void userDaoFindByid(){
+        sysUserDAO.selectByPrimaryKey("0");
+    }
+
 }
 

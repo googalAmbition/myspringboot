@@ -5,8 +5,13 @@ server:
 spring:
   profiles:
       active: druid
-mybatis:
+#mybatis:
+#  mapper-locations:
+#   # 搜索指定包别名
+#  type-aliases-package: com.ctc.myspringboot.dao
+#  configLocation: classpath:mybatis/mybatis-config.
+
+mybatis-plus:
   mapper-locations: classpath:mybatis/*/*.xml
-   # 搜索指定包别名
-  type-aliases-package: com.ctc.myspringboot.dao
-  configLocation: classpath:mybatis/mybatis-config.xml
+  configuration: classpath:mybatis/mybatis-config.xml
+

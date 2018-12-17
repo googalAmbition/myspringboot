@@ -30,5 +30,11 @@ public class MybatisPlusConfig {
     public PerformanceInterceptor performanceInterceptor() {
         return new PerformanceInterceptor();
     }
+
+//    @Bean
+//    public OracleKeyGenerator oracleKeyGenerator(){
+//        return new OracleKeyGenerator();
+//    }
+
 }
 
