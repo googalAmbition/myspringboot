@@ -27,7 +27,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 //为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.ctc.myspringboot.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.ctc.myspringboot.controller.api"))
                 .paths(PathSelectors.any())
                 .build();
     }

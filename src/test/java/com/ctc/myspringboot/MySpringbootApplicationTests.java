@@ -2,9 +2,9 @@ package com.ctc.myspringboot;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.ctc.myspringboot.dao.SysUserDAO;
-import com.ctc.myspringboot.model.SysUser;
-import com.ctc.myspringboot.service.SysUserService;
+import com.ctc.myspringboot.dao.sys.UserDAO;
+import com.ctc.myspringboot.model.sys.User;
+import com.ctc.myspringboot.service.sys.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,18 +18,18 @@ import java.util.List;
 public class MySpringbootApplicationTests {
 
     @Autowired
-    private SysUserDAO sysUserDAO;
+    private UserDAO userDAO;
 
     @Autowired
-    private SysUserService sysUserService;
+    private UserService userService;
 
     /**
      * Dao测试
      */
     @Test
     public void contextLoads() {
-        SysUser sysUser = sysUserDAO.selectById("0");
-        System.out.println(sysUser);
+        User user = userDAO.selectById("0");
+        System.out.println(user);
     }
 
     /**
@@ -37,39 +37,14 @@ public class MySpringbootApplicationTests {
      */
     @Test
     public void userServiceWrapperTest() {
-        QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.eq("parent_id", "0");
-        List<SysUser> list = sysUserService.list(wrapper);
-        for (SysUser user : list) {
+        List<User> list = userService.list(wrapper);
+        for (User user : list) {
             System.out.println(user);
         }
     }
 
-    /**
-     * 分页测试
-     */
-    @Test
-    public void userServiceTest() {
-
-        Page<SysUser> page = new Page<>(1, 5);
-        page = sysUserService.selectUserPage(page);
-        for (SysUser user : page.getRecords()) {
-            System.out.println(user);
-        }
-        System.out.println(page.getTotal());
-    }
-
-    @Test
-    public void userServiceSave(){
-        SysUser user = new SysUser();
-        user.setName("hello world");
-        sysUserService.save(user);
-    }
-
-    @Test
-    public void userDaoFindByid(){
-        sysUserDAO.selectByPrimaryKey("0");
-    }
 
 }
 
