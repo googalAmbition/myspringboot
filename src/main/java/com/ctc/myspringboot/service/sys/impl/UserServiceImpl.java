@@ -2,10 +2,14 @@ package com.ctc.myspringboot.service.sys.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.ctc.myspringboot.common.utils.TreeUtils;
 import com.ctc.myspringboot.dao.sys.UserDAO;
+import com.ctc.myspringboot.model.sys.Menu;
 import com.ctc.myspringboot.model.sys.User;
 import com.ctc.myspringboot.service.sys.UserService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author ctc
@@ -32,6 +36,12 @@ public class UserServiceImpl extends ServiceImpl<UserDAO, User> implements UserS
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.eq("email", name);
         return baseMapper.selectOne(wrapper);
+    }
+
+    @Override
+    public List<Menu> selectMenuByUserId(Integer userId) {
+        List<Menu> menus = baseMapper.selectMenusByUserId(userId);
+        return TreeUtils.getChildPerms(menus, 0);
     }
 
 }

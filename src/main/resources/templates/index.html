@@ -20,7 +20,7 @@
         .nav > li:hover .dropdown-menu {display: block;}
     </style>
 </head>
-<body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden" th:classappend="${@config.getKey('sys.index.skinName')}">
+<body class="fixed-sidebar full-height-layout gray-bg skin-default " style="overflow: hidden" >
 <div id="wrapper">
 
     <!--左侧导航开始-->
@@ -35,7 +35,8 @@
                          <img th:src="(${user.avatar} == '') ? '/img/profile.jpg' : '/profile/' + ${user.avatar}" alt="image" class="img-circle" height="60" width="60"/></span>
                          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                           <span class="clear"><span class="block m-t-xs"><strong class="font-bold">[[${user.userName}]]</strong></span>
-                         <span class="text-muted text-xs block"><span th:if="${not #strings.isEmpty(user.dept)}">[[${user.dept.deptName}]]</span> <b class="caret"></b></span> </span> </a>
+                         <span class="text-muted text-xs block">
+                             <b class="caret"></b></span> </span> </a>
                          <ul class="dropdown-menu animated fadeInRight m-t-xs">
                              <li><a class="menuItem" th:href="@{/system/user/profile}">个人信息</a></li>
                              <li class="divider"></li>
@@ -52,7 +53,7 @@
                 <li th:each="menu : ${menus}">
                 	<a href="#">
                 		<i class="fa fa fa-bar-chart-o" th:class="${menu.icon}"></i>
-                    	<span class="nav-label" th:text="${menu.menuName}">一级菜单</span> 
+                    	<span class="nav-label" th:text="${menu.menuName}">一级菜单</span>
                     	<span class="fa arrow"></span>
                 	</a>
                    <ul class="nav nav-second-level collapse">
@@ -69,7 +70,7 @@
         </div>
     </nav>
     <!--左侧导航结束-->
-    
+
     <!--右侧部分开始-->
     <div id="page-wrapper" class="gray-bg dashbard-1">
         <div class="row border-bottom">
