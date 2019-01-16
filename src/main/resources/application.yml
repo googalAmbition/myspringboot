@@ -36,9 +36,10 @@ spring:
   messages:
     #国际化资源文件路径
     basename: i18n/messages
-mybatis-plus:
-  mapper-locations: classpath:mapper/**/*.xml
-  config-location: classpath:mybatis/mybatis-config.xml
+mybatis-plus: #mybatis-plus插件配置
+  mapper-locations: classpath:mapper/**/*.xml #mapper路径配置
+  config-location: classpath:mybatis/mybatis-config.xml #mybatis配置文件
+  type-enums-package: com.ctc.myspringboot.common.enums.mybatis #枚举包配置
 
 # Shiro
 shiro:

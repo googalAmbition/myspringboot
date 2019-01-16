@@ -1,4 +1,4 @@
-package com.ctc.myspringboot.model.sys;
+package com.ctc.myspringboot.model.user;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

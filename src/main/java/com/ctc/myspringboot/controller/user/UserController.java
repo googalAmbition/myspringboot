@@ -1,12 +1,12 @@
-package com.ctc.myspringboot.controller.sys;
+package com.ctc.myspringboot.controller.user;
 
 import com.ctc.myspringboot.common.dto.AjaxResult;
 import com.ctc.myspringboot.common.utils.ServletUtils;
 import com.ctc.myspringboot.common.utils.StringUtils;
 import com.ctc.myspringboot.common.utils.security.ShiroUtils;
-import com.ctc.myspringboot.model.sys.Menu;
-import com.ctc.myspringboot.model.sys.User;
-import com.ctc.myspringboot.service.sys.UserService;
+import com.ctc.myspringboot.model.user.Menu;
+import com.ctc.myspringboot.model.user.User;
+import com.ctc.myspringboot.service.user.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;

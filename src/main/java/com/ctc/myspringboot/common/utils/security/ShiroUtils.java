@@ -3,7 +3,7 @@ package com.ctc.myspringboot.common.utils.security;
 import com.ctc.myspringboot.common.utils.StringUtils;
 import com.ctc.myspringboot.common.utils.bean.BeanUtils;
 import com.ctc.myspringboot.config.shiro.UserRealm;
-import com.ctc.myspringboot.model.sys.User;
+import com.ctc.myspringboot.model.user.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.mgt.RealmSecurityManager;
 import org.apache.shiro.session.Session;

@@ -2,9 +2,9 @@ package com.ctc.myspringboot.config.shiro;
 
 import com.ctc.myspringboot.common.exception.user.*;
 import com.ctc.myspringboot.common.utils.security.ShiroUtils;
-import com.ctc.myspringboot.model.sys.User;
-import com.ctc.myspringboot.service.sys.MenuService;
-import com.ctc.myspringboot.service.sys.RoleService;
+import com.ctc.myspringboot.model.user.User;
+import com.ctc.myspringboot.service.user.MenuService;
+import com.ctc.myspringboot.service.user.RoleService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -50,38 +50,25 @@ public class UserRealm extends AuthorizingRealm {
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
         String username = token.getUsername();
         String password = "";
-        if (token.getPassword() != null){
+        if (token.getPassword() != null) {
             password = new String(token.getPassword());
         }
         User user;
         try {
-            user = loginService.login(username,password);
-        } catch (CaptchaException e)
-        {
+            user = loginService.login(username, password);
+        } catch (CaptchaException e) {
             throw new AuthenticationException(e.getMessage(), e);
-        }
-        catch (UserNotExistsException e)
-        {
+        } catch (UserNotExistsException e) {
             throw new UnknownAccountException(e.getMessage(), e);
-        }
-        catch (UserPasswordNotMatchException e)
-        {
+        } catch (UserPasswordNotMatchException e) {
             throw new IncorrectCredentialsException(e.getMessage(), e);
-        }
-        catch (UserPasswordRetryLimitExceedException e)
-        {
+        } catch (UserPasswordRetryLimitExceedException e) {
             throw new ExcessiveAttemptsException(e.getMessage(), e);
-        }
-        catch (UserBlockedException e)
-        {
+        } catch (UserBlockedException e) {
             throw new LockedAccountException(e.getMessage(), e);
-        }
-        catch (RoleBlockedException e)
-        {
+        } catch (RoleBlockedException e) {
             throw new LockedAccountException(e.getMessage(), e);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
 //            log.info("对用户[" + username + "]进行登录验证..验证未通过{}", e.getMessage());
             throw new AuthenticationException(e.getMessage(), e);
         }
@@ -93,8 +80,7 @@ public class UserRealm extends AuthorizingRealm {
     /**
      * 清理缓存权限
      */
-    public void clearCachedAuthorizationInfo()
-    {
+    public void clearCachedAuthorizationInfo() {
         this.clearCachedAuthorizationInfo(SecurityUtils.getSubject().getPrincipals());
     }
 }

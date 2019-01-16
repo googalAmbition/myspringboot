@@ -1,11 +1,10 @@
 package com.ctc.myspringboot.controller.api;
 
-import com.ctc.myspringboot.model.sys.User;
-import com.ctc.myspringboot.service.sys.UserService;
+import com.ctc.myspringboot.model.user.User;
+import com.ctc.myspringboot.service.user.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

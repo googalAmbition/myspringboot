@@ -1,7 +1,7 @@
-package com.ctc.myspringboot.service.sys;
+package com.ctc.myspringboot.service.user;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.ctc.myspringboot.model.sys.Menu;
+import com.ctc.myspringboot.model.user.Menu;
 
 import java.util.Set;
 

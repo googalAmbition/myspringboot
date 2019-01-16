@@ -1,6 +1,6 @@
 package com.ctc.myspringboot.common.utils;
 
-import com.ctc.myspringboot.model.sys.Menu;
+import com.ctc.myspringboot.model.user.Menu;
 
 import java.util.ArrayList;
 import java.util.Iterator;

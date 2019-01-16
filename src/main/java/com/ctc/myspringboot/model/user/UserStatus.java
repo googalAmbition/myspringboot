@@ -1,4 +1,4 @@
-package com.ctc.myspringboot.model.sys;
+package com.ctc.myspringboot.model.user;
 
 /**
  * 用户状态

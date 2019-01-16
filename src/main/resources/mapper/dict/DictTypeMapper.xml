@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ctc.myspringboot.dao.dict.DictTypeMapper">
+    <resultMap id="type" type="com.ctc.myspringboot.model.dict.DictType">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="create_date" jdbcType="TIME" property="createDate"/>
+        <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
+        <collection property="dataSet" column="id" resultMap="data"/>
+    </resultMap>
+
+    <resultMap id="data" type="com.ctc.myspringboot.model.dict.DictData">
+        <id column="data_id" jdbcType="INTEGER" property="id"/>
+        <result column="type_id" jdbcType="INTEGER" property="typeId"/>
+        <result column="data_name" jdbcType="VARCHAR" property="name"/>
+        <result column="data_create_date" jdbcType="DATE" property="createDate"/>
+        <result column="data_create_by" jdbcType="VARCHAR" property="createBy"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        t.id,
+        t.`name`,
+        t.create_date,
+        t.create_by,
+        d.id as data_id,
+        d.type_id,
+        d.`name` as data_name,
+        d.create_date as data_create_date,
+        d.create_by as data_create_by
+    </sql>
+    <select id="selectById" resultMap="type">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_dict_type t
+        left join sys_dict_data d on t.id = d.type_id
+        where t.id = #{id}
+    </select>
+
+
+</mapper>

@@ -1,8 +1,8 @@
-package com.ctc.myspringboot.dao.sys;
+package com.ctc.myspringboot.dao.user;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ctc.myspringboot.model.sys.Menu;
-import com.ctc.myspringboot.model.sys.User;
+import com.ctc.myspringboot.model.user.Menu;
+import com.ctc.myspringboot.model.user.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

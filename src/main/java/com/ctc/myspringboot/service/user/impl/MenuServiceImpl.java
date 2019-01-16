@@ -1,10 +1,10 @@
-package com.ctc.myspringboot.service.sys.impl;
+package com.ctc.myspringboot.service.user.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ctc.myspringboot.common.utils.StringUtils;
-import com.ctc.myspringboot.dao.sys.MenuDao;
-import com.ctc.myspringboot.model.sys.Menu;
-import com.ctc.myspringboot.service.sys.MenuService;
+import com.ctc.myspringboot.dao.user.MenuDao;
+import com.ctc.myspringboot.model.user.Menu;
+import com.ctc.myspringboot.service.user.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

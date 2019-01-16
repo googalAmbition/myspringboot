@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
-@MapperScan("com.ctc.myspringboot.dao.*")
+@MapperScan("com.ctc.myspringboot.dao")
 public class MySpringbootApplication {
 
     public static void main(String[] args) {

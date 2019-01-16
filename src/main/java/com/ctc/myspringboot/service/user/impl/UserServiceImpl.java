@@ -1,12 +1,12 @@
-package com.ctc.myspringboot.service.sys.impl;
+package com.ctc.myspringboot.service.user.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ctc.myspringboot.common.utils.TreeUtils;
-import com.ctc.myspringboot.dao.sys.UserDAO;
-import com.ctc.myspringboot.model.sys.Menu;
-import com.ctc.myspringboot.model.sys.User;
-import com.ctc.myspringboot.service.sys.UserService;
+import com.ctc.myspringboot.dao.user.UserDAO;
+import com.ctc.myspringboot.model.user.Menu;
+import com.ctc.myspringboot.model.user.User;
+import com.ctc.myspringboot.service.user.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

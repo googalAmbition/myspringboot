@@ -9,9 +9,9 @@ import com.ctc.myspringboot.common.exception.user.UserBlockedException;
 import com.ctc.myspringboot.common.exception.user.UserNotExistsException;
 import com.ctc.myspringboot.common.exception.user.UserPasswordNotMatchException;
 import com.ctc.myspringboot.common.utils.security.ShiroUtils;
-import com.ctc.myspringboot.model.sys.User;
-import com.ctc.myspringboot.model.sys.UserStatus;
-import com.ctc.myspringboot.service.sys.UserService;
+import com.ctc.myspringboot.model.user.User;
+import com.ctc.myspringboot.model.user.UserStatus;
+import com.ctc.myspringboot.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -86,32 +86,27 @@ public class LoginService {
         }
     }
 
-        private boolean maybeEmail(String username)
-        {
-            if (!username.matches(UserConstants.EMAIL_PATTERN))
-            {
-                return false;
-            }
-            return true;
+    private boolean maybeEmail(String username) {
+        if (!username.matches(UserConstants.EMAIL_PATTERN)) {
+            return false;
         }
+        return true;
+    }
 
-        private boolean maybeMobilePhoneNumber(String username)
-        {
-            if (!username.matches(UserConstants.MOBILE_PHONE_NUMBER_PATTERN))
-            {
-                return false;
-            }
-            return true;
+    private boolean maybeMobilePhoneNumber(String username) {
+        if (!username.matches(UserConstants.MOBILE_PHONE_NUMBER_PATTERN)) {
+            return false;
         }
+        return true;
+    }
 
-        /**
-         * 记录登录信息
-         */
-        public void recordLoginInfo(User user)
-        {
-            user.setLoginIp(ShiroUtils.getIp());
-            user.setLoginDate(DateUtils.getNowDate());
-            userService.updateById(user);
-        }
+    /**
+     * 记录登录信息
+     */
+    public void recordLoginInfo(User user) {
+        user.setLoginIp(ShiroUtils.getIp());
+        user.setLoginDate(DateUtils.getNowDate());
+        userService.updateById(user);
+    }
 
 }

@@ -1,7 +1,7 @@
-package com.ctc.myspringboot.dao.sys;
+package com.ctc.myspringboot.dao.user;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ctc.myspringboot.model.sys.Role;
+import com.ctc.myspringboot.model.user.Role;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
