@@ -2,6 +2,7 @@
 使用到的技术有
 - SpringBoot
 - Mybatis Plus
+- shiro
 - Druid 
 - Swagger 
 - FastJson
